@@ -7,7 +7,7 @@
 ### コミットメッセージのフォーマット
 
 .gitmessageを利用することでコミットメッセージのテンプレートを提供します。
-これはgit config localに設定することで、本プロジェクト内でのみ有効になります。
+これは`git config --local`に設定することで、本プロジェクト内でのみ有効になります。
 
 ```bash
 git config --local commit.template .gitmessage
@@ -18,7 +18,7 @@ git config --local commit.template .gitmessage
 ```bash
 git commit
 # Overview (Uncomment one of the following templates)
-#feat:
+#feat: 
 # └  A new feature
 #fix:
 # └  A bug fix
@@ -31,15 +31,11 @@ git commit
 # └  A code change that neither fixes a bug nor adds a featur
 #test:
 # └  Adding missing or correcting existing tests
+#ci:
+# └  Changes to our CI configuration files and scripts
 #chore:
 # └  Changes to the build process or auxiliary tools and libraries
 
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# On branch main
-# Your branch is up to date with 'origin/main'.
-#
 ```
 
 適切なテンプレートを選択し、コメントアウトをはずしてコミットメッセージを記述してください。
@@ -52,9 +48,9 @@ docs: Update README.md
 ## コミットメッセージとラベルの対応
 
 `develop`ブランチへのPRを作成するときにコミットメッセージからラベルを自動で付与するように設定しています。
-以下、コミットメッセージとラベルの対応です。
+以下、プレフィックスとラベルの対応です。
 
-|　コミットメッセージ | label | 説明|
+|　プレフィックス | ラベル | 説明|
 |---|---|---|
 |feat: | `feature` | 新機能の追加|
 |fix: | `bugfix` | バグの修正|
