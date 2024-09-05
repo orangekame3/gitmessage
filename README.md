@@ -2,7 +2,7 @@
 
 ## Conventional Commits
 
-コミットメッセージは[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)にゆるくしたがってください。
+コミットメッセージは[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)に従うことが望ましいです。
 
 ### コミットメッセージのフォーマット
 

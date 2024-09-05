@@ -3,7 +3,7 @@
 
 ## Conventional Commits
 
-Please loosely follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) guidelines for your commit messages.
+The commit messages should preferably follow the　[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) guidelines.
 
 ### Commit Message Format
 
