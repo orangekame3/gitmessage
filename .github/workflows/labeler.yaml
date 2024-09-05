@@ -51,19 +51,19 @@ jobs:
             fi
           done < commits.txt
           
-          # Remove duplicate labels
-          unique_labels=($(echo "${labels[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+          # Remove duplicate labels and join them as a comma-separated string
+          unique_labels=($(echo "${labels[@]}" | tr ' ' '\n' | sort -u | tr '\n' ','))
           
           # Debug output for unique labels
           echo "Unique labels: ${unique_labels[*]}"
 
-          # Set the output
+          # Set the output as a comma-separated string
           echo "labels=${unique_labels[*]}" >> $GITHUB_OUTPUT
 
       - name: Add labels to PR
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: ${{ steps.set-labels.outputs.labels }}
+          labels: ${{ steps.set-labels.outputs.labels }}  # カンマ区切りのラベルリストを渡す
 
       - name: Assign PR creator
         uses: actions/github-script@v6
