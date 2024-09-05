@@ -56,11 +56,11 @@ docs: Update README.md
 
 |　コミットメッセージ | label | 説明|
 |---|---|---|
-|feat: | https://github.com/orangekame3/gitmessage/labels/feature | 新機能の追加|
-|fix: | https://github.com/orangekame3/gitmessage/labels/bugfix | バグの修正|
-|docs: | https://github.com/orangekame3/gitmessage/labels/documentation | ドキュメントのみの変更|
-|style: | https://github.com/orangekame3/gitmessage/labels/style | コードの意味に影響を与えない変更（空白、フォーマット、セミコロンの欠落など）|
-|refactor: | https://github.com/orangekame3/gitmessage/labels/refactor | バグの修正や機能の追加を行わないコードの変更|
-|test: | https://github.com/orangekame3/gitmessage/labels/test | テストの追加、修正|
-|ci: | https://github.com/orangekame3/gitmessage/labels/ci | CIの追加、修正|
-|chore: | https://github.com/orangekame3/gitmessage/labels/chore | 些末な変更 |
+|feat: | [feature](https://github.com/orangekame3/gitmessage/labels/feature) | 新機能の追加|
+|fix: | [bugfix](https://github.com/orangekame3/gitmessage/labels/bugfix) | バグの修正|
+|docs: | [documentation](https://github.com/orangekame3/gitmessage/labels/documentation) | ドキュメントのみの変更|
+|style: | [style](https://github.com/orangekame3/gitmessage/labels/style) | コードの意味に影響を与えない変更（空白、フォーマット、セミコロンの欠落など）|
+|refactor: | [refactor](https://github.com/orangekame3/gitmessage/labels/refactor) | バグの修正や機能の追加を行わないコードの変更|
+|test: | [test](https://github.com/orangekame3/gitmessage/labels/test) | テストの追加、修正|
+|ci: | [ci](https://github.com/orangekame3/gitmessage/labels/ci) | CIの追加、修正|
+|chore: | [chore](https://github.com/orangekame3/gitmessage/labels/chore) | 些末な変更 |
