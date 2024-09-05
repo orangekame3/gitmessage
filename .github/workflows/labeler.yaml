@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 全履歴を取得する
+
       - name: Extract commit messages
         run: |
-          COMMITS=$(git log --format=%B $(git merge-base origin/develop HEAD)..HEAD)
+          COMMITS=$(git log --format=%B)
           echo "$COMMITS"
           echo "$COMMITS" > commits.txt
       
