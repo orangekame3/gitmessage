@@ -59,7 +59,9 @@ jobs:
           echo "$unique_labels"
 
           # Set the output as a newline-separated string
-          echo "labels=$unique_labels" >> $GITHUB_OUTPUT
+          echo "labels<<EOF" >> $GITHUB_OUTPUT
+          echo "$unique_labels" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Add labels to PR
         uses: actions-ecosystem/action-add-labels@v1
