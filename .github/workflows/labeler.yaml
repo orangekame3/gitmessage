@@ -10,15 +10,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        
       - name: Extract commit messages
         run: |
           COMMITS=$(git log --format=%B $(git merge-base origin/develop HEAD)..HEAD)
+          echo "$COMMITS"
           echo "$COMMITS" > commits.txt
+      
+      - name: Debug - Print commits
+        run: cat commits.txt
+      
       - name: Set labels based on commit messages
         id: set-labels
         run: |
           labels=()
           while IFS= read -r commit; do
+            echo "Processing commit: $commit"  # デバッグ用出力
             if [[ $commit =~ ^feat ]]; then
               labels+=("feature")
             elif [[ $commit =~ ^fix ]]; then
@@ -39,6 +46,9 @@ jobs:
           # Remove duplicate labels
           unique_labels=($(echo "${labels[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
           
+          # Debug output for unique labels
+          echo "Unique labels: ${unique_labels[*]}"
+
           # Set the output
           echo "labels=${unique_labels[*]}" >> $GITHUB_OUTPUT
 
