@@ -69,9 +69,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.addAssignees({
+            await github.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              assignees: [context.actor]  # PRを作成したユーザーをアサイン
+              assignees: [context.actor]  // PRを作成したユーザーをアサイン
             })
