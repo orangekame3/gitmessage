@@ -40,9 +40,9 @@ jobs:
               labels+=("bugfix")
             elif [[ $commit =~ ^docs ]]; then
               labels+=("documentation")
+            elif [[ $commit =~ ^style ]]; then
               labels+=("style")
             elif [[ $commit =~ ^refactor ]]; then
-            elif [[ $commit =~ ^style ]]; then
               labels+=("refactor")
             elif [[ $commit =~ ^test ]]; then
               labels+=("test")
