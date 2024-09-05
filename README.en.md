@@ -28,13 +28,13 @@ git commit
 # └  Changes that do not affect the meaning of the code
 #    (white-space, formatting, missing semi-colons, etc)
 #refactor:
-# └  A code change that neither fixes a bug nor adds a feature
+# └  A code change that neither fixes a bug nor adds a featur
 #test:
 # └  Adding missing or correcting existing tests
 #ci:
 # └  Changes to our CI configuration files and scripts
 #chore:
-# └  Changes to the build process or auxiliary tools and libraries
+# └  Updating grunt tasks etc; no production code change
 
 ```
 

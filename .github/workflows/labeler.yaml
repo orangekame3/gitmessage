@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -20,7 +20,6 @@ jobs:
 
       - name: Extract commit messages
         run: |
-          # developブランチとの差分のコミットメッセージを取得
           COMMITS=$(git log --format=%B origin/develop..HEAD)
           echo "$COMMITS"
           echo "$COMMITS" > commits.txt

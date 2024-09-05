@@ -34,7 +34,7 @@ git commit
 #ci:
 # └  Changes to our CI configuration files and scripts
 #chore:
-# └  Changes to the build process or auxiliary tools and libraries
+# └  Updating grunt tasks etc; no production code change
 
 ```
 
