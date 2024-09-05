@@ -60,3 +60,14 @@ docs: Update README.md
 |test: | `test` | テストの追加、修正|
 |ci: | `ci` | CIの追加、修正|
 |chore: | `chore` | 些末な変更 |
+
+
+## Release
+
+リリース時には以下のコマンドを実行してください。
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
