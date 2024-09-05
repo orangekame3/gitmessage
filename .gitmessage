@@ -12,5 +12,7 @@
 # └  A code change that neither fixes a bug nor adds a featur
 #test:
 # └  Adding missing or correcting existing tests
+#ci:
+# └  Changes to our CI configuration files and scripts
 #chore:
 # └  Changes to the build process or auxiliary tools and libraries

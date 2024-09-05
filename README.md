@@ -48,3 +48,19 @@ git commit
 docs: Update README.md
 # └  Documentation only changes
 ```
+
+## コミットメッセージとラベルの対応
+
+`develop`ブランチへのPRを作成するときにコミットメッセージからラベルを自動で付与するように設定しています。
+以下、コミットメッセージとラベルの対応です。
+
+|　コミットメッセージ | label | 説明|
+|---|---|---|
+|feat: | https://github.com/orangekame3/gitmessage/labels/feature | 新機能の追加|
+|fix: | https://github.com/orangekame3/gitmessage/labels/bugfix | バグの修正|
+|docs: | https://github.com/orangekame3/gitmessage/labels/documentation | ドキュメントのみの変更|
+|style: | https://github.com/orangekame3/gitmessage/labels/style | コードの意味に影響を与えない変更（空白、フォーマット、セミコロンの欠落など）|
+|refactor: | https://github.com/orangekame3/gitmessage/labels/refactor | バグの修正や機能の追加を行わないコードの変更|
+|test: | https://github.com/orangekame3/gitmessage/labels/test | テストの追加、修正|
+|ci: | https://github.com/orangekame3/gitmessage/labels/ci | CIの追加、修正|
+|chore: | https://github.com/orangekame3/gitmessage/labels/chore | 些末な変更 |

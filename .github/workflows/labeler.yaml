@@ -2,9 +2,9 @@ name: PR Labeler
 
 on:
   pull_request:
-    types: [opened, synchronize]  # PRの作成時と更新時にトリガー
+    types: [opened, synchronize]
     branches:
-      - develop  # developブランチをターゲットにしたPRのみ対象
+      - develop
 
 jobs:
   labeler:
@@ -13,10 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 全履歴を取得する
+          fetch-depth: 0
 
       - name: Fetch all branches
-        run: git fetch --all  # すべてのリモートブランチ情報をフェッチする
+        run: git fetch --all
 
       - name: Extract commit messages
         run: |
@@ -33,19 +33,21 @@ jobs:
         run: |
           labels=()
           while IFS= read -r commit; do
-            echo "Processing commit: $commit"  # デバッグ用出力
+            echo "Processing commit: $commit"
             if [[ $commit =~ ^feat ]]; then
               labels+=("feature")
             elif [[ $commit =~ ^fix ]]; then
-              labels+=("bug")
+              labels+=("bugfix")
             elif [[ $commit =~ ^docs ]]; then
               labels+=("documentation")
-            elif [[ $commit =~ ^style ]]; then
               labels+=("style")
             elif [[ $commit =~ ^refactor ]]; then
+            elif [[ $commit =~ ^style ]]; then
               labels+=("refactor")
             elif [[ $commit =~ ^test ]]; then
               labels+=("test")
+            elif [[ $commit =~ ^ci ]]; then
+              labels+=("ci")
             elif [[ $commit =~ ^chore ]]; then
               labels+=("chore")
             fi
@@ -66,7 +68,7 @@ jobs:
       - name: Add labels to PR
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: ${{ steps.set-labels.outputs.labels }}  # 改行区切りのラベルリストを渡す
+          labels: ${{ steps.set-labels.outputs.labels }}
 
       - name: Assign PR creator
         uses: actions/github-script@v6
@@ -76,5 +78,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              assignees: [context.actor]  // PRを作成したユーザーをアサイン
+              assignees: [context.actor]
             })
