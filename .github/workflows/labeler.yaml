@@ -2,7 +2,9 @@ name: PR Labeler
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize]  # PRの作成時と更新時にトリガー
+    branches:
+      - develop  # developブランチをターゲットにしたPRのみ対象
 
 jobs:
   labeler:
@@ -62,3 +64,14 @@ jobs:
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: ${{ steps.set-labels.outputs.labels }}
+
+      - name: Assign PR creator
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              assignees: [context.actor]  # PRを作成したユーザーをアサイン
+            })
